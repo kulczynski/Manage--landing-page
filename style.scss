@@ -20,12 +20,28 @@ body {
     max-width: 1440px;
 }
 
-body,
+header,
+nav {
+    width: 100%;
+}
+
 .container {
+    width: 90%;
+}
+
+.boxFlex {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.boxFlex-col {
     flex-direction: column;
+}
+
+.navigation {
+    list-style-type: none;
+    justify-content: space-around;
 }
 
 .attribution {
