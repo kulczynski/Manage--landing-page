@@ -18,6 +18,7 @@ body {
     width: 100%;
     min-width: 375px;
     max-width: 1440px;
+    position: relative ;
 }
 
 header,
@@ -25,8 +26,8 @@ nav {
     width: 100%;
 }
 
-nav {
-    margin-top: 3.125rem;
+.mrg-t {
+    margin: 1.5rem 0;
 }
 
 .container {
@@ -47,16 +48,6 @@ nav {
     margin-right: auto;
 }
 
-.bgd {
-    //     width: 100vw;
-    //     height: 100vh;
-    background: linear-gradient(35deg, rgba(70, 70, 70, 0.8), rgba(255, 0, 0, 0) 100%);
-    // position: absolute;
-    // left: 0;
-    // top: 0;
-    z-index: 1;
-}
-
 .navigation {
     width: 20.5rem;
     background-color: white;
@@ -70,20 +61,34 @@ nav {
         display: none;
     }
     &--mobile {
+        max-width: 300px;
         background-color: white;
-        margin: 2.8rem 0;
+        // margin: 2.8rem 0;
         padding: 1.125rem 0;
         border-radius: 5px;
-        position: relative;
-        z-index: 2;
-        transition: opacity .2s ease-in-out;
-        transition: all .4s ease-in-out;
-        &.open {
-            min-width: 321px;
+        transition: opacity .4s ease-in-out;
+        transition: all .2s ease-in-out;
+        
+
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 100%;
+            top: 0;
+            overflow: hidden;
+            background-color: gray;
+            opacity: .4;
+            // background: linear-gradient(35deg, rgba(70, 70, 70, 0.8), rgba(255, 0, 0, 0) 100%);
         }
     }
     &__element--mobile {
-        margin: 1.125rem 0;
+        width: 100%;
+        text-align: center;
+        margin: .5rem 0;
         font-size: .9rem;
         font-weight: 700;
         color: $Dark-Blue;
@@ -97,6 +102,10 @@ nav {
     padding: 0;
 }
 
+.blocked-y{
+    overflow-y:hidden;
+}
+
 .hamburger {
     width: 2rem;
     height: 2rem;
@@ -106,10 +115,18 @@ nav {
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    z-index: 2;
+    position: relative;
+    z-index: 3;
 }
 
-.hero {}
+.hero {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    &__description{
+        max-width: 15rem;
+    }
+}
 
 .btn--visible {
     display: none;
